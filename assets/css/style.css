@@ -1,0 +1,41 @@
+body {
+  background-image: url("../images/rainbow.jpg");
+  font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+    background-image: url(../images/rainbow.jpeg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+.panel-body {
+	background: #d5e1e5;
+}
+
+p {
+  font-style: 15px;
+}
+
+/*crystal size*/
+.crystal {
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+  background-color: white;
+  border: solid;
+  border-color: antiquewhite;
+}
+
+/* color of win counter*/
+#win-count {
+	color: #3cb753;
+}
+
+/* color of loss counter*/
+#loss-count {
+	color: maroon;
+}
