@@ -1,3 +1,9 @@
+// You'll want to get in the habit of placing your JS code within a document ready block,
+// an iife (immediately invoked function expression), or some other functional context
+// The reason for this is to not leak variables onto the global scope.
+// In this case, your crystal object and all of your functions are readily
+// available for a malicious user to tamper with.
+
 // Crystal object
 var crystal = {
   blue:
@@ -32,6 +38,9 @@ var lossCount = 0;
 
 
 // FUNCTIONS
+
+// I really like how you broke up your game logic into functions
+// it makes understanding the flow of your program much easier 👌
 
 // select random numbers
 var randNum = function(min, max) {
@@ -108,18 +117,9 @@ var addValues = function(clickedCrystal) {
 startGame();
 
 // User Actions - Function Callers
-$("#blue").click(function() {
-  addValues(crystal.blue);
-});
-
-$("#purple").click(function() {
-  addValues(crystal.purple);
-});
-
-$("#green").click(function() {
-  addValues(crystal.green);
-});
-
-$("#multi").click(function() {
-  addValues(crystal.multi);
-});
+// Instead of writing a click handler for each individual crystal
+// you can write a more generic one which helps to DRY up your code.
+$('.crystal').click(function() {
+  var color = this.id
+  addValues( crystal[color] )
+})
